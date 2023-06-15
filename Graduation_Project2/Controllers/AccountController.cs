@@ -43,7 +43,7 @@ namespace Graduation_Project2.Controllers
 
             _userManager = userManager;
             _signInManager = signInManager;
-            _roleManager = roleManager;
+            _roleManager = roleManager; 
             CreateTheRoles().Wait();
         }
        
