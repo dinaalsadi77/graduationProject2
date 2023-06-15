@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Graduation_Project2.Models.DoctorAdmin>
+
+ 
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>
+</title>
+<link href="~/Content/assets/css/style.css" rel="stylesheet">
+<!-- Favicons -->
+<link rel="icon" type="image/x-icon" href="~/favicon (2).ico">
+
+ 
+
+    <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+ 
+
+    <!-- Vendor CSS Files -->
+<link href="~/Content/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link href="~/Content/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+<link href="~/Content/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="~/Content/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="~/Content/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+<link href="~/Content/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<link href="~/Content/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+<link href="~/Content/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+<script src="javascript/.js"></script>
+</head>
+<body>
+<section id="doctors" class="doctors">
+<div class="container">
+
+ 
+
+            <div class="section-title">
+<h2>Doctors</h2>
+<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+</div>
+
+ 
+
+            <div class="row">
+                @foreach(var item in Model){
+<div class="col-lg-6">
+<div class="member d-flex align-items-start">
+<div class="pic">
+
+                                <img src="@("~/image/" + @item.IDPhoto)" asp-append-version="true" class="img-fluid" alt="">
+                            </div>
+<div class="member-info">
+<h4>@item.FirstName @item.LastName</h4>
+<span>@item.Specialization</span>
+<p>@item.DoctorDescription</p>
+                                <a style="text-decoration:none;" asp-action="DoctorDetails" asp-controller="Patient" asp-route-id="@item.DoctorAdminId">
+                                    <button style="margin-top:5px" class="btn btn-primary btn-sm">View More</button></a>
+</div>
+</div>
+</div>
+                }
+
+ 
+
+            </div>
+
+ 
+
+        </div>
+</section><!-- End Doctors Section -->
+
+ 
+
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+body > div{
+	width:100%;
+	background:#92D3CE;
+	color:white;
+	text-align:center;
+	font-size:35px ;
+	font-weight:bold;
+	padding:20px;
+	margin:10px auto;
+}
+
+table{
+	width: 45%;
+	border:solid 2px black;
+	position:relative;
+	left:25%;
+
+}
+
+table,td{
+	border-collapse:collapse;
+}
+
+tr td{
+	width:15%;
+	padding: 10px;
+	border-bottom:solid 2px black;
+	} 
+
+tr td:nth-of-type(3),td:nth-of-type(4){
+	width:3%;
+	padding:0px; 
+}	
+td img{
+	width:100%;
+	border-radius:50%;
+}
+
+td .Accept{
+	cursor:pointer;
+	background:green;
+	color:white;
+	border:none;
+	padding:7px;
+	border-radius:7px;
+}
+
+td .Reject{
+	cursor:pointer;
+	background:red;
+	color:white;
+	border:none;
+	padding:7px;
+	border-radius:7px;
+}
+
+td .Accept:hover{
+	opacity:0.8;
+}
+td .Reject:hover{
+	opacity:0.8;
+}

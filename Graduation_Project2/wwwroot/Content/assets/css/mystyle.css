@@ -1,0 +1,134 @@
+.appointment-child
+{
+    display: flex;
+    background-color: #1977cc;
+    color: white;
+    width: 30vw;
+    border-radius: 6px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    padding: 1vw;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2vh;
+}
+.appointment-child .left-side,
+.appointment-child .middle,
+.appointment-child .right-side
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.appointment-child .right-side
+{
+    border-right: 1px solid black;
+    padding-right: 2vw;
+}
+.appointment-child .left-side img
+{
+    width: 5vw;
+    border-radius: 6px;
+    height: 5vw;
+}
+.appointment-child button,
+.card-container .body button
+{
+    background: white;
+    color: #1977cc;
+    padding: 0.5vw 1vw;
+    border-radius: 6px;
+    border: 1px solid #1977cc;
+    outline: none;
+    transition: color 0.6s, background 0.6s, border 0.6s;
+}
+.appointment-child button:hover,
+.card-container .body button:hover
+{
+    border: 1px solid white;
+    background-color: #1977cc;
+    color: white;
+}
+.appointment-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    margin-left: 0 !important;
+}
+.system-admin-container
+{
+    width: 100vw;
+    color: white;
+    padding: 3vh 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.info-container,
+.card-container
+{
+    background-color: #1977cc;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 6px;
+    padding: 2vw;
+}
+.card-container div
+{
+    margin-top: 2vh;
+}
+.info-container .top
+{
+    justify-content: space-around;
+    align-items: start;
+    display: flex;
+}
+.info-container .top .left img
+{
+    width: 7vw;
+    height: 7vw;
+    border-radius: 6px;
+}
+.info-container .bottom > div
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.info-container .bottom >div input
+{
+    margin-left: 2vw;
+}
+.card-container .body input
+{
+    outline: none;
+    border: 2px solid white;
+    border-radius: 6px;
+    padding: 0.2vw;
+    width: 15vw;
+}
+.card-container .body input.exp
+{
+    width: 5vw;
+}
+.card-container .body input:focus
+{
+    border: 2px solid #043e70;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+@media only screen and (max-width: 600px)
+{
+    .info-container .bottom > div
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

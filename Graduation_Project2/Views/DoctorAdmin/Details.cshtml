@@ -1,0 +1,115 @@
+﻿@model Graduation_Project2.Models.DoctorAdmin
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>DoctorAdmin</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdPhoto_File)
+        </dt>
+        <dd class="col-sm-10">
+            <img src="@("~/image/"+Model.IDPhoto)" asp-append-version="true" width="250px" height="250px" />
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Fees)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Fees)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DoctorDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DoctorDescription)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Discount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Discount)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Specialization)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Specialization)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.medicalCentre)
+        </dt>
+        <dd class="col-sm-10">
+            @ViewData["MedicalCentre"]
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Rate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Rate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EmailAddress)
+        </dd>
+       
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nationality)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nationality)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cetegory)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cetegory)
+        </dd>
+    </dl>
+</div>
+<div>
+
+    <a asp-action="DoctorReq" class="btn btn-primary">Back</a>
+</div>

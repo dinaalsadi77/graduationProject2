@@ -1,0 +1,166 @@
+﻿@model Graduation_Project2.Models.DoctorAdmin
+
+
+
+
+
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>
+        Profile
+    </title>
+    <link rel="stylesheet" href="~/css/Profile.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css'>
+
+
+
+    <script src="https://kit.fontawesome.com/f3d4095cbb.js" crossorigin="anonymous"></script>
+    <script src="~/js/Profile.js"></script>
+
+
+
+</head>
+<body>
+
+    @{
+        List<Schedule> scheules = (List<Schedule>)ViewData["scheules"];
+    }
+    <div class="container">
+        <div class="card">
+            <img src="@("~/image/" + Model.IDPhoto)" asp-append-version="true" class="img-fluid" alt="">            <span class="DescPart">
+                <p> @Model.FirstName @Model.LastName </p>
+                <div class="job"> <i class="fa-solid fa-stethoscope"></i> @Model.Specialization</div>
+                <span>
+                    Rate:
+                    <i class='bi bi-pentagon-fill'>
+                        <span class="rateResult">@Model.Rate</span>
+                    </i>
+                    @{
+                        int emptyRate = 5 - (int)(Model.Rate);
+                    }
+                    @for (int i = 1; i <= @Model.Rate; i++)
+                    {
+                        <i class="fa-solid fa-star"></i>
+                    }
+
+
+
+                    @for (int i = 1; i <= emptyRate; i++)
+                    {
+                        <i class="fa-regular fa-star"></i>
+                    }
+
+                </span>
+                <div class="desc job"><i class="fa-solid fa-briefcase-medical"></i> @Model.DoctorDescription</div>
+                <div class="job"><i class="fa-solid fa-location-dot"></i> @Model.Address </div>
+                <div class="job"><i class="fa-solid fa-clock"></i> Waiting Time: @Model.waitingTime minutes</div>
+                <div class="job"> <i class="fa-solid fa-dollar-sign"></i> Fees: @Model.Fees $</div>
+            </span>
+            <div class="mytable">
+                @*<i class="fa-solid fa-arrow-left"></i>*@
+                <table>
+                    @{
+                        // Dictionary<DateTime,bool> dates = new Dictionary<DateTime, bool>();
+                        List<DateTime> dates = new List<DateTime>();
+                    }
+                    <thead>
+                        <tr>
+
+                            @foreach (Schedule sch in scheules)
+                            {
+                                TimeSpan time = sch.Date.TimeOfDay;
+                                DateTime date = sch.Date.Date;
+                                bool flagDate = dates.Contains(date);
+                                //bool flagDate= dates.ContainsKey(date);
+                                if (flagDate)
+                                    continue;
+
+                                dates.Add(date);
+                                // dates.Add(sch.Date.Date, sch.state);
+
+                                <th> @date.ToString("dd/MM")</th>
+                                @* <th>Today</th>
+                            <th>Tomorrow</th>
+                            <th>AfterTomm</th>*@
+
+
+                            }
+                        </tr>
+
+                    </thead>
+                    @{
+                        int max = 0;
+                        int c = 0;
+
+                        int c2 = 0;
+                    }
+                    <tbody>
+                        @foreach (DateTime dateTime in dates)
+                        {
+                            c = 0;
+                            foreach (Schedule sch in scheules)
+                            {
+                                if (sch.Date.Date.Equals(dateTime))
+                                {
+                                    c++;
+                                    if (c > max)
+                                        max = c;
+                                }
+                            }
+                        }
+
+                        <tr>
+
+                            @foreach (DateTime dateTime in dates)
+                            {
+                                c2 = 0;
+                                <td class="outerTd">
+                                    <table class="innerTable">
+
+                                        @foreach (Schedule sch in scheules)
+                                            if (sch.Date.Date.Equals(dateTime))
+                                            {
+                                                c2++;
+                                                <tr>
+
+                                                    @if (sch.state == true)
+                                                    {
+                                                        <td class="innerTdF">
+                                                            <a>@sch.Date.TimeOfDay.ToString(@"hh\:mm")</a>
+                                                        </td>
+
+                                                    }
+                                                    else
+                                                    {
+                                                        <td class="innerTd">
+                                                            <a asp-action="ProfileDate" asp-route-query="@sch.Date" asp-route-id="@sch.AllScheduleId">@sch.Date.TimeOfDay.ToString(@"hh\:mm")</a>
+                                                        </td>
+                                                    }
+
+                                                </tr>
+                                            }
+                                        @for (int x = c2; x < max; x++)
+                                        {
+                                            <tr>
+                                                <td class="innerTd" style="pointer-events:none">
+                                                    &nbsp;&nbsp;
+                                                </td>
+                                            </tr>
+                                        }
+                                    </table>
+                                </td>
+                            }
+                        </tr>
+
+                  
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

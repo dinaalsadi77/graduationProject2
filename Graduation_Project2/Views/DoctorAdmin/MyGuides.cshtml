@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewData["Title"] = "MyGuides";
+}
+
+<h1>MyGuides</h1>
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>
+    </title>
+    <link rel="stylesheet" href="~/css/list.css" />
+    <script src="javascript/.js"></script>
+</head>
+<body>
+    @model IEnumerable<Graduation_Project2.Models.Guide>
+
+
+
+
+    <form>
+        <h3>Guides List</h3>
+        <table>
+            <tbody>
+                <div style="margin-left: 0px;" class="container">
+                    <div class="row mt-5">
+                        <div class="col-lg-8 mt-5 mt-lg-0">
+                            <div class="appointment-container">
+                                @foreach (var item in Model)
+                                {
+                                    <div class="appointment-child">
+                                        <div class="left-side">
+
+                                            <img src="@("~/image/" + @item.IDPhoto)" asp-append-version="true" class="img-fluid" alt="">
+
+
+                                            <p>@item.FirstName @item.LastName</p>
+                                        </div>
+                                        <div class="middle">
+                                            <p>@item.PhoneNumber</p>
+                                        </div>
+
+                                        
+                                        <div>
+
+                                            <a asp-action="myAppointments" class="btn btn-success" asp-route-id="@item.GuideId">Set to Appointment</a>
+                                            <a asp-action="GuideDetails" class="btn btn-success" asp-route-id="@item.GuideId">Guide Info</a>
+
+                                        </div>
+                                    </div>
+                                }
+
+
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+    </form>
+
+
+
+    </tbody>
+    </table>
+</body>
+</html>

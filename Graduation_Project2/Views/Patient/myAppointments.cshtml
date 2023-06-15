@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewData["Title"] = "myAppointments";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <title>Bright Health</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="~/favicon (2).ico">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/Content/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/assets/css/mystyle.css">
+    <link href="~/Content/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/Content/assets/css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: Medilab
+    * Updated: Mar 10 2023 with Bootstrap v5.2.3
+    * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+
+  
+
+   
+    @model DoctorAdmin
+    @{
+        List<Appointment> appointments = (List<Appointment>)ViewData["appointments"];
+        List<DoctorAdmin> doctors = (List<DoctorAdmin>)ViewData["doctors"];
+        List<Schedule> schedules = (List<Schedule>)ViewData["schedules"];
+    }
+    <main id="main">
+
+        <section style="margin-top: 5vh; margin-left: 0px;" id="contact" class="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h1>My Appointments</h1>
+                </div>
+            </div>
+            <div style="margin-left: 0px;" class="container">
+                <div class="row">
+                    <div class="col ">
+                        <div class="appointment-container">
+
+                            @for(int i=0; i< appointments.Count; i++) {
+                            <div class="appointment-child">
+                                <div class="left-side">
+                                        <img src="@("~/image/" + doctors[i].IDPhoto)" asp-append-version="true" class="img-fluid" alt="">
+                                        <div>@doctors[i].FirstName @doctors[i].LastName</div>
+                                </div>
+                                <div class="middle">
+                                        <div>@schedules[i].Date.DayOfWeek.ToString()</div>
+                                        <div>@schedules[i].Date.ToString("dd/MM/yyyy")</div>
+                                        <div>@schedules[i].Date.ToString("hh:mm")</div>
+                                </div>
+                                <div class="right-side">
+                                    <p>@doctors[i].Specialization </p>
+                                </div>
+                                <div>
+                                    <form asp-action="myAppointments" asp-route-id="@appointments[i].AppointmentID" > 
+                                        <button type="submit" >Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Contact Section -->
+        <a class="btn btn-primary" asp-action="HomePage">back</a>
+    </main><!-- End #main -->
+  
+
+    <!-- Vendor JS Files -->
+    <script src="~/Content/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="~/Content/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/Content/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/Content/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/Content/assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+﻿@model Graduation_Project2.Models.SharedClass.User;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>LOGIN</title>
+
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <link href="~/css/Login.css" rel="stylesheet"/>
+    <!--Stylesheet-->
+   </head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form asp-action="Login" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <h3>LOGIN</h3>
+        <label for="username/email">Username/Email</label>
+        <input asp-for="EmailAddress" type="text" placeholder="Username or Email" id="username">
+
+        <label for="password">Password</label>
+        <input asp-for="Password" type="password" placeholder="Password" id="password">
+
+        <button type="submit">Log In</button>
+ 
+
+        @if (TempData["Message"] != null)
+        {
+            <div id="alert" class="alert alert-info">@TempData["Message"]</div>
+        }
+            <div class="signup">
+            <i>Don't have an account? <a asp-action="SignUp" asp-controller="Account" class="label label-primary"> SignUp</a></i>
+
+        </div>
+    </form>
+</body>
+</html>

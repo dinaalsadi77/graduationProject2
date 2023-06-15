@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Graduation_Project2.Models.Appointment>
+
+@{
+    ViewData["Title"] = "DoctorAppointments";
+}
+
+<h1>Doctor Appointments</h1>
+
+
+<table class="table table-bordered">
+    <thead style="background-color:cornflowerblue">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AppointmentDate)
+            </th>
+   
+          
+       
+
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppointmentDate)
+            </td>
+        
+           
+            <td>
+                    <a asp-action="PatientDetailsForD" asp-route-id="@item.PatientId" class="btn btn-primary"> Patient Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<a asp-action="HomePage" class="btn btn-primary">back</a>

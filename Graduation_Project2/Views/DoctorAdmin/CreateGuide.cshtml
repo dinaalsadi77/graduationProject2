@@ -1,0 +1,34 @@
+﻿@model Graduation_Project2.Models.SharedClass.User
+
+@{
+    ViewData["Title"] = "CreateGuide";
+}
+
+<h1>Create Guide</h1>
+
+<h4>Guide</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SignUp" asp-controller="Account" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <h3 style="color:red">@TempData["message"]</h3>
+            <div class="form-group">
+                <label asp-for="EmailAddress" class="control-label"></label>
+                <input asp-for="EmailAddress" class="form-control" />
+                <span asp-validation-for="EmailAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-outline-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

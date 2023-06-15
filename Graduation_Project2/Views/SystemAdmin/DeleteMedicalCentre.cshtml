@@ -1,0 +1,42 @@
+﻿ @model IEnumerable<Graduation_Project2.Models.MedicalCentre>
+
+@{
+    ViewData["Title"] = "DeleteMedicalCentre";
+}
+
+<h1>Delete Medical Centre</h1>
+
+
+<table class="table table-bordered">
+    <thead style="background:cornflowerblue">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                    <a asp-action="MED_CEN_Details"  class="btn btn-outline-warning" asp-route-id="@item.MedicalCentreId">Details</a>
+
+                    <form asp-action="DeleteMC" method="post">
+                        <input name="MedicalCentreId" type="hidden" value="@item.MedicalCentreId" />
+                        <input type="submit" class="btn btn-outline-danger" value="Delete" />
+                    </form>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

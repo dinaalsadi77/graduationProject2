@@ -1,0 +1,73 @@
+﻿*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: url(../Content/assets/img/hero-bg.jpg);
+}
+/* Set the style for the form */
+/*form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}*/
+
+
+
+    form * {
+        font-family: 'Poppins',sans-serif;
+        color: darkblue;
+        letter-spacing: 0.5px;
+        outline: none;
+        border: none;
+    }
+
+    form h3 {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 42px;
+        text-align: center;
+    }
+
+/* Style the form fields */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 6px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+}
+
+/* Style the submit button */
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+/* Style the link */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+    }

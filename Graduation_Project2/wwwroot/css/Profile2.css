@@ -1,0 +1,67 @@
+html {
+	scroll-behavior: smooth
+}
+
+body {
+	margin: 0;
+}
+
+.container {
+	margin: 10px;
+	width: 75%;
+}
+
+.card {
+	box-shadow: 0 0 8px black;
+	padding: 10px;
+	overflow: hidden;
+}
+
+
+
+	.card img {
+		border-radius: 10%;
+		width: 55%;
+		margin: auto 10px 10px 10px;
+		float: left;
+	}
+
+	.card .DescPart {
+		padding: auto 10px;
+		float: left;
+	}
+
+.DescPart p {
+	margin-bottom: 10px;
+	font-size: 18px;
+}
+
+.DescPart .job {
+	color: gray;
+	font-size: 12px;
+	margin-bottom: 4px;
+}
+
+.data {
+	clear: both;
+	padding: 1px 20px;
+	width: 40%;
+}
+
+	.data span {
+		display: block;
+		margin-bottom: 3px;
+		padding: 3px;
+		font-weight: bold;
+		width: 100%;
+	}
+
+		.data span:nth-of-type(2) {
+			margin-top: 4px;
+		}
+
+.record {
+	border: solid 3px #16EADA;
+	border-radius: 10px;
+	padding: 10px;
+}

@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SIGN UP</title>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link href="~/css/SignUp.css" rel="stylesheet" />
+
+    <!--Stylesheet-->
+    @model Graduation_Project2.Models.SharedClass.User
+</head>
+    <body>
+        <div class="background">
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <form asp-action="SignUp" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <h3>SIGN UP</h3>
+
+       @* <label for="username">Username</label>
+            <input  type="text" placeholder="username" id="username">*@
+
+            <label for="Email">Email</label>
+            <input asp-for="EmailAddress" type="text" placeholder="Email" id="Email" required>
+          
+            <label for="password">Password</label>
+        <input id="p2" asp-for="Password" type="password" placeholder="Password" id="password" required>
+
+        <label for="Re-write password">Re-write password</label>
+        <input id="p3" onchange="my()" type="password" placeholder="Re-write password" id="re-typepassword" required>
+
+        <div>
+            <label for="Category">Choose a category</label>
+            <select asp-for="Cetegory" onchange="hide()" id="category" required>
+                <option value="Doctor">Doctor</option>
+                <option value="Patient">Patient</option>
+           </select>
+        </div>
+        <br />
+      
+        <label id="L1">Medical Centre Name:</label>
+        <input id="MidCentre" name="MidCentre"/>
+        <br />
+        <label id="L2">Medical Centre Country :</label>
+        <input id="Country" name="Country" />
+      
+        
+  
+       
+
+            <button type="submit" >SignUp</button>
+
+
+
+  
+        <script>
+            function my() {
+                var newPass = document.getElementById("p2").value;
+                var ConfirmPass = document.getElementById("p3").value;
+
+                if (newPass != ConfirmPass) {
+
+                    alert("Your new password is not the same of Confirm Password ...!");
+                    window.location.reload();
+
+                }
+            }
+
+            function hide(){
+                var cat = document.getElementById('category').value;
+                if(cat=="Patient"){
+                    document.getElementById('MidCentre').style.display = "none";
+                    document.getElementById('Country').style.display = "none";
+                    document.getElementById('L1').style.display="none";
+                    document.getElementById('L2').style.display="none";
+                }
+                else{
+                    document.getElementById('MidCentre').style.display = "block";
+                    document.getElementById('Country').style.display = "block";
+                    document.getElementById('L1').style.display = "block";
+                    document.getElementById('L2').style.display = "block";
+                }
+               
+            }
+           
+
+        </script>
+
+
+
+
+            <div class="signup">
+            <i class="login">Have an account?<a asp-action="Login" asp-controller="Account" class="label label-primary"> Login</a></i>
+       
+
+        </div>
+         </form>
+    </body>
+</html>

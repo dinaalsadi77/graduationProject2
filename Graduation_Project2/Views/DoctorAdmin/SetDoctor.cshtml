@@ -1,0 +1,264 @@
+﻿@{
+    ViewData["Title"] = "Add Doctor";
+}
+
+<h1>Add Doctor</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <title>Bright Health</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="~/favicon (2).ico">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/Content/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/assets/css/mystyle.css">
+    <link href="~/Content/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/set.css">
+    <!-- Template Main CSS File -->
+    <link href="~/Content/assets/css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: Medilab
+    * Updated: Mar 10 2023 with Bootstrap v5.2.3
+    * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+
+    
+
+   
+
+
+    <main id="main">
+
+        <section style="margin-top: 15vh; margin-left: 0px;" id="contact" class="contact">
+
+            <div style="margin-left: 0px;" class="container">
+                <div class="row mt-5">
+                    <div class="col-lg-8 mt-5 mt-lg-0">
+
+                        @model Graduation_Project2.Models.DoctorAdmin
+
+                        @{
+                            ViewData["Title"] = "SetDoctor";
+                        }
+
+                        <h1>SetDoctor</h1>
+
+                        <h4>DoctorAdmin</h4>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-4">
+                                <form asp-action="SetDoctor" enctype="multipart/form-data">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+
+                                    <input asp-for="MedicalCentreId" hidden />
+                                    <div class="form-group">
+                                        <label asp-for="FirstName" class="control-label"></label>
+                                        <input asp-for="FirstName" class="form-control" />
+                                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="LastName" class="control-label"></label>
+                                        <input asp-for="LastName"  class="form-control" />
+                                        <span asp-validation-for="LastName" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="IdPhoto_File" class="control-label"></label>
+                                        <input asp-for="IdPhoto_File" accept="image/*" />
+                                        <span asp-validation-for="IdPhoto_File" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Gender" class="control-label"></label>
+                                        <input asp-for="Gender" class="form-control" />
+                                        <span asp-validation-for="Gender" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label asp-for="PhoneNumber" class="control-label"></label>
+                                        <input asp-for="PhoneNumber" class="form-control" />
+                                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Age" class="control-label"></label>
+                                        <input asp-for="Age" class="form-control" />
+                                        <span asp-validation-for="Age" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label asp-for="Address" class="control-label"></label>
+                                        <input asp-for="Address" class="form-control" />
+                                        <span asp-validation-for="Address" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Nationality" class="control-label"></label>
+                                        <input asp-for="Nationality" class="form-control" />
+                                        <span asp-validation-for="Nationality" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Specialization" class="control-label"></label>
+                                        <input asp-for="Specialization" class="form-control" />
+                                        <span asp-validation-for="Specialization" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label asp-for="DoctorDescription" class="control-label"></label>
+                                        <input asp-for="DoctorDescription" class="form-control" />
+                                        <span asp-validation-for="DoctorDescription" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Fees" class="control-label"></label>
+                                        <input asp-for="Fees" class="form-control" />
+                                        <span asp-validation-for="Fees" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="waitingTime" class="control-label"></label>
+                                        <input asp-for="waitingTime" class="form-control" />
+                                        <span asp-validation-for="waitingTime" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" value="Create" class="btn btn-primary" />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div>
+                            <a asp-action="HomePage" asp-controller="DoctorAdmin">Back</a>
+                        </div>
+
+                        @section Scripts {
+                            @{
+                                await Html.RenderPartialAsync("_ValidationScriptsPartial");
+                            }
+                        }
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Contact Section -->
+
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>Medilab</h3>
+                        <p>
+                            A108 Adam Street <br>
+                            New York, NY 535022<br>
+                            United States <br><br>
+                            <strong>Phone:</strong> +1 5589 55488 55<br>
+                            <strong>Email:</strong> info@example.com<br>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                        <h4>Join Our Newsletter</h4>
+                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                        <form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container d-md-flex py-4">
+
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                    &copy; Copyright <strong><span>Medilab</span></strong>. All Rights Reserved
+                </div>
+                <div class="credits">
+                    <!-- All the links in the footer should remain intact. -->
+                    <!-- You can delete the links only if you purchased the pro version. -->
+                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/ -->
+                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+        <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- Vendor JS Files -->
+    <script src="~/Content/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="~/Content/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/Content/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/Content/assets/vendor/php-email-form/validate.js"></script>
+    <script src="~/Content/assets/js/myscript.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/Content/assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Graduation_Project2.Models.DoctorAdmin>
+
+@{
+    ViewData["Title"] = "DeleteDoctor";
+}
+
+<h1>Delete Doctors</h1>
+
+
+<table class="table table-bordered">
+    <thead style="background:cornflowerblue">
+        <tr>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.Specialization)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.medicalCentre)
+            </th>
+   
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+     
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            @if (item.isFirst == false)
+            {
+                <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Specialization)
+           </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MedicalCentreId)
+      
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+           
+            <td>
+                    <a asp-action="DocAdmin_Details" class="btn btn-outline-warning" asp-route-id="@item.DoctorAdminId">Details</a>
+
+                    <form asp-action="DeleteDA" method="post">
+                        <input name="DoctorAdminId" type="hidden" value="@item.DoctorAdminId" />
+                        <input type="submit" class="btn btn-outline-danger" value="Delete" />
+                    </form>
+            </td>
+        </tr>
+        }
+}
+    </tbody>
+</table>

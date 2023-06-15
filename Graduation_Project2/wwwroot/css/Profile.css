@@ -1,0 +1,346 @@
+html {
+	scroll-behavior: smooth
+}
+
+body {
+	margin: 0;
+}
+
+.container {
+	margin: 10px;
+	width: 65%;
+}
+
+.card {
+	box-shadow: 0 0 8px black;
+	padding: 10px;
+	overflow: hidden;
+}
+
+
+
+	.card img {
+		border-radius: 10%;
+		width: 25%;
+		margin: auto 10px 10px 10px;
+		float: left;
+	}
+
+	.card .DescPart {
+		padding: auto 10px;
+		float: left;
+	}
+
+
+.DescPart .fa-stethoscope {
+	font-size: 13px;
+	font-weight: 900;
+}
+
+.DescPart span {
+	font-weight: bold;
+	font-size: 17px;
+	color: #E3C415;
+}
+
+.DescPart .bi-pentagon-fill {
+	color: #E3C415;
+	font-size: 30px;
+	position: relative;
+}
+
+.DescPart .rateResult {
+	position: absolute;
+	color: white;
+	left: 20%;
+	top: 40%;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.DescPart .fa-star {
+	color: #FAF605;
+	font-size: 17px;
+	margin: 5px auto;
+	cursor: pointer;
+}
+
+.DescPart p {
+	margin-bottom: 10px;
+	font-size: 18px;
+}
+
+.DescPart .job {
+	color: gray;
+	font-size: 12px;
+	margin-bottom: 4px;
+}
+
+.DescPart .desc {
+	margin-bottom: 4px;
+	margin-top: 4px;
+}
+
+.card .mytable {
+	margin: auto 20px;
+	position: relative;
+	float: left;
+}
+
+.mytable .fa-arrow-left, .mytable .fa-arrow-right {
+	background: #ddd;
+	padding: 2px;
+	position: absolute;
+	top: 40%;
+	cursor: pointer;
+}
+
+.mytable .fa-arrow-left {
+	left: 0;
+}
+
+.mytable .fa-arrow-right {
+	right: 0.5%;
+}
+
+.mytable > table {
+	display: inline;
+	margin: 5px 20px;
+	color: white;
+}
+
+
+th {
+	background: #24385c;
+}
+
+.outerTd {
+	background-color: cornflowerblue;
+	margin: auto 5px;
+}
+
+
+.innerTable td, {
+	padding: 3px;
+}
+
+th {
+	margin-bottom: 2px;
+	padding: 4px;
+}
+
+.innerTable {
+	margin: -1px;
+}
+
+.innerTd {
+	background: #2791E5;
+	font-size: 15px;
+	margin: 5px 2px;
+	cursor: pointer;
+	border: 1.5px solid white;
+}
+
+	.innerTd:hover {
+		opacity: 0.7;
+	}
+
+	.innerTd a {
+		text-decoration: none;
+		color: white;
+	}
+
+innerTdF {
+	background: #22675c;
+	font-size: 15px;
+	margin: 5px 2px;
+	border: 1.5px solid white;
+}
+
+.innerTdF:hover {
+	/*opacity: 0.7;*/
+}
+
+.innerTdF a {
+	background: #22675c;
+	text-decoration: none;
+	color: white;
+	pointer-events: none;
+}
+
+.fa-arrow-down {
+	font-size: 12px;
+}
+
+#more {
+	color: #ddd;
+	text-align: center;
+}
+
+	#more:hover {
+		background: #2791E5;
+		color: #ddd;
+	}
+
+#book {
+	background: green;
+	text-align: center;
+	padding: 3px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+	#book:hover {
+		background: #33E90F;
+	}
+
+/*html{
+	scroll-behavior: smooth
+}
+
+body{
+margin:0;
+}
+
+.container{
+	margin: 10px;
+	width:65%;
+	
+}
+.card{
+box-shadow: 0 0 8px black;	
+padding:10px;
+overflow:hidden;
+}
+
+
+
+.card img{
+	border-radius:10%;
+	width:25%;
+	margin: auto 10px 10px 10px;
+	float:left;	
+	
+}
+
+.card .DescPart {
+	padding: auto 10px;
+	float:left;
+}
+
+
+.DescPart .fa-stethoscope{
+	font-size:13px;
+	font-weight:900;
+}
+
+.DescPart span{
+	font-weight:bold;
+	font-size:17px;
+	color:#E3C415;
+}
+
+.DescPart .bi-pentagon-fill {
+	color: #E3C415;	
+	font-size:30px;
+	position:relative;
+}
+
+.DescPart .rateResult {
+	position:absolute;
+	color:white;
+	left:20%;
+	top:40%;
+	font-size:12px;
+	font-weight:bold;
+}
+
+.DescPart .fa-star {
+	color: #FAF605;
+	font-size:17px;	
+	margin: 5px auto;
+	cursor:pointer;
+}
+
+.DescPart p {
+	margin-bottom:10px;
+	font-size:18px;
+}
+.DescPart .job{
+	color:gray;
+	font-size:12px;
+	margin-bottom:4px;
+}
+
+.DescPart .desc{
+		margin-bottom:4px;
+		margin-top:4px;	
+}
+
+.card .mytable{
+	margin:auto 20px;
+	position:relative;
+	float:left;
+
+}
+
+.mytable .fa-arrow-left,.mytable .fa-arrow-right {
+	background:#ddd;
+	padding:2px;
+	position:absolute;
+	top:40%;
+	cursor:pointer;
+}
+
+.mytable .fa-arrow-left {
+	left:0;
+	
+}
+.mytable .fa-arrow-right{
+	right:0.5%;
+}
+
+table{
+	display:inline;
+	margin: 5px 20px;
+	color:white;	
+}
+
+td, th{
+	padding:3px;
+}
+th{
+	background:#24385c;
+
+}
+td{
+	background:#2791E5;
+	font-size:15px;
+	margin: 2px;	
+	cursor:pointer;
+}
+td:hover{
+	background:#aaa;
+}
+
+.fa-arrow-down{
+	font-size:12px;
+}
+
+#more{
+	color: #ddd;
+	text-align:center;
+}
+
+#more:hover{
+	background:#2791E5;
+	color: #ddd;
+}
+#book{
+	background:green;
+	text-align:center;
+	border-radius:3px;
+}
+#book:hover{
+	background:#33E90F;
+}*/

@@ -1,0 +1,196 @@
+﻿
+
+
+<!DOCTYPE HTML>
+<html>
+<title>Schedule</title>
+
+<head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+
+
+    h1 {
+        text-align: center;
+    }
+
+
+
+    form {
+        max-width: 70%;
+        margin: 0 auto;
+    }
+
+
+
+        form div {
+            margin-bottom: 5px;
+        }
+
+
+
+    label {
+        display: inline-block;
+        padding: 5px;
+    }
+
+
+
+    input[type="datetime-local"],
+    input[type="text"] {
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        margin: auto 2px;
+    }
+
+
+
+    button {
+        padding: 8px 16px;
+        margin: 3px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+            background-color: #45a049;
+        }
+
+        button:active {
+            background-color: #3d8e41;
+        }
+
+    #bigContainer{
+        /*display:flex;*/
+    }
+    #date-time-container{
+        margin: auto 2px;
+    }
+    #row{
+        width:80%;
+        display:flex;
+        justify-content:space-between;
+        border-bottom: 1px solid black;
+    }
+
+            #row button{
+                padding: 4px;
+                margin: 2px;
+                background-color: darkred;
+               
+            }
+</style>
+</head>
+
+<body>
+    @model Graduation_Project2.Models.Schedule 
+
+    @{
+        List<Schedule> scheules = (List<Schedule>)ViewData["editScheules"];
+       // int count = 0;
+    }
+    <p>@TempData["mass"]</p>
+    <form asp-action="editSchedule">
+        <label>Date:</label><br>
+        <div id="bigContainer">
+            <div id="date-time-container">
+                @for (int count = 0; count < scheules.Count; count++)
+                {
+                  <div id="row">
+                      <input type="datetime-local" name="times[]" value="@scheules[count].Date.ToString("yyyy-MM-ddTHH:mm")">
+                        <button type="submit" name="btnSubmit" value="@scheules[count].ScheduleId">Delete</button>
+                  </div>
+                }
+            </div>
+        </div>
+        <button type="submit" name="btnSubmit" value="save">Save Changes</button>
+    </form>
+    <script>/*
+                var counter = 1;
+                var divContainer;
+                var counts =@* @scheules.Count ;
+                var list = [@Html.Raw(Json.Serialize(scheules))];*@
+                
+
+                while (counter < counts) {
+                  //  console.log(list[0].Date.ToString("yyyy-MM-ddTHH:mm");
+            console.log("aaa");
+
+            var dateTimeContainer = document.getElementById("date-time-container");
+            console.log("bbb");
+                    var year = list[counter].Date.getFullYear();
+                    var month = ('0' + (list[counter].Date.getMonth() + 1)).slice(-2); // Adding leading zero if needed
+                    var day = ('0' + list[counter].Date.getDate()).slice(-2); // Adding leading zero if needed
+                    var hours = ('0' + list[counter].Date.getHours()).slice(-2); // Adding leading zero if needed
+                    var minutes = ('0' + list[counter].Date.getMinutes()).slice(-2); // Adding leading zero if needed
+            console.log("ccc");
+                    var formattedDateTime = year + '-' + month + '-' + day + 'T' + hours + ':' + minutes;
+            console.log("ddd");
+                    console.log(formattedDateTime)
+            console.log("eee");
+            var datetimeInput = document.createElement("input");
+                    datetimeInput.type = "datetime-local";
+                    datetimeInput.name = "times[]";
+                    datetimeInput.value = formattedDateTime;
+                    counter++;
+            console.log("fff");
+
+
+                    var dateTimeWrapper = document.createElement("div");
+                    dateTimeWrapper.appendChild(datetimeInput);
+            console.log("gggg");
+
+                     if (counter % 8 == 0) {
+                        var bigContainer = document.getElementById("bigContainer");
+                        bigContainer.style.display = "flex";
+                        divContainer = document.createElement("div");
+                        divContainer.appendChild(dateTimeWrapper);
+                        divContainer.style.margin = "auto 2px;"
+                        bigContainer.appendChild(divContainer);
+
+                    }
+                    else if (counter > 8) {
+                        divContainer.appendChild(dateTimeWrapper);
+                    }
+                    else
+                        dateTimeContainer.appendChild(dateTimeWrapper);
+                }
+                */
+    </script>
+
+</body>
+</html>
+@*   @for (count = 0; count < scheules.Count; count++)
+            {
+                if (count % 8 == 0 && count!=0)
+                {*@
+
+@* @{
+                            int x = count;
+                        }
+                        @for ( x = count; x < x+8; x++){
+                        <div>
+                    <input type="datetime-local" name="times[]" value="@scheules[count].Date.ToString("yyyy-MM-ddTHH:mm")">
+                        </div>*@
+@*   count++;
+                        }
+                    </div>*@
+@*   }
+                else
+                {
+
+                    <div>
+                        <input type="datetime-local" name="times[]" value="@scheules[count].Date.ToString("yyyy-MM-ddTHH:mm")">
+                    </div>
+                }
+
+            }*@
